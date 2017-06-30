@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -25,49 +25,67 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginController'
+    })
+
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    controller: 'AppController'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.arquivos', {
+    url: '/arquivos',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/arquivos.html',
+        controller:  'ArquivosController'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.grupoMais', {
+      url: '/grupoMais',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/grupoMais.html',
+          controller:  'GrupoMaisController'
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
+    .state('app.galeria', {
+      url: '/galeria',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'templates/galeria.html',
+          controller: 'GaleriaController'
         }
       }
     })
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+    .state('app.detalhe-arquivo', {
+      url: '/detalhe-arquivo/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/detalhe-arquivo.html',
+          controller: 'DetalheArquivoController'
+        }
       }
-    }
-  });
+    })
+
+    .state('app.perfil', {
+      url: '/perfil',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/perfil.html',
+          controller: 'PerfilController'
+        }
+      }
+    });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/login');
 });
