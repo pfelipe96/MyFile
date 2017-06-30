@@ -7,11 +7,15 @@ angular.module('starter.services', [])
         {
           nome:'Quem não tem cão, caça com gato',
           id: '1'
+        },
+        {
+          nome:'Quem não tem cão, caça com gato',
+          id: '2'
         }
     ];
 
     return {
-      grupo_todos: function() {
+      grupos_todos: function() {
         return listaGrupos;
       },
 

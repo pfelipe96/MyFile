@@ -31,6 +31,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'LoginController'
     })
 
+    .state('cadastro', {
+      url: '/cadastro',
+      templateUrl: 'templates/cadastro.html',
+      controller: 'CadastroController'
+    })
+
   .state('app', {
     url: '/app',
     abstract: true,
@@ -38,8 +44,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     controller: 'AppController'
   })
 
+  .state('app.grupos', {
+    url: '/grupos',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/grupos.html',
+        controller:  'GruposController'
+      }
+    }
+  })
+
   .state('app.arquivos', {
-    url: '/arquivos',
+    url: '/arquivos/:id',
     views: {
       'menuContent': {
         templateUrl: 'templates/arquivos.html',

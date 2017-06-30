@@ -6,14 +6,28 @@ angular.module('starter.controllers', [])
   $scope.login = function () {
         $state.go('app.arquivos')
   }
+
+  $scope.cadastro = function () {
+        $state.go('cadastro')
+  }
+
 })
 
+.controller('CadastroController', function($scope, $state) {
+    $scope.salvar = function () {
+        $state.go('login')
+    }
+})
 
 .controller('AppController', function($scope, $ionicModal, $timeout) {
 
 })
 
-.controller('ArquivosController', function($scope, ServiceArquivos) {
+.controller('GruposController', function($scope, ServiceGrupos, $stateParams) {
+    $scope.grupos = ServiceGrupos.grupos_todos();
+})
+
+.controller('ArquivosController', function($scope, ServiceArquivos,) {
     $scope.arquivos = ServiceArquivos.arquivos_todos();
 })
 
@@ -21,11 +35,10 @@ angular.module('starter.controllers', [])
     $scope.arquivo = ServiceArquivos.get($stateParams.id);
 })
 
-.controller('GrupoMaisController', function($scope, ServiceGrupos) {
-    $scope.gruposMais = ServiceGrupos.grupo_todos();
+.controller('PerfilController', function($scope) {
 })
 
-.controller('PerfilController', function($scope) {
+.controller('GrupoMaisController', function($scope) {
 })
 
 .controller('GaleriaController', function($scope) {
