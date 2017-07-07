@@ -1,0 +1,11 @@
+ion-content{
+  display: inline-block;
+}
+
+.button_share_galeria{
+  float: right;
+}
+
+.button_star_galeria{
+  float:left;
+}
