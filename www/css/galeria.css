@@ -9,3 +9,15 @@ ion-content{
 .button_star_galeria{
   float:left;
 }
+
+.has-search {
+  margin-top: 80px;
+}
+
+.is-header {
+  background-color: #fff;
+}
+
+.is-header .card {
+  z-index: 1000;
+}
