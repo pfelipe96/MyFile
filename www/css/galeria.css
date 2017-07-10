@@ -2,22 +2,32 @@ ion-content{
   display: inline-block;
 }
 
-.button_share_galeria{
-  float: right;
+.is-file {
+  margin-top: 50px;
 }
 
-.button_star_galeria{
-  float:left;
-}
-
-.has-search {
-  margin-top: 80px;
-}
-
-.is-header {
-  background-color: #fff;
-}
-
-.is-header .card {
+.is-header-search .card {
   z-index: 1000;
+}
+
+.is-file p{
+  text-align: center;
+  padding: 6% 0;
+}
+
+.button-share-galeria{
+  text-align:right;
+  font-size: 20px;
+}
+
+.button-star-galeria{
+  font-size: 20px;
+}
+
+.buttoh-star-galeria:hover{
+    color: yellow;
+}
+
+.item-galeria{
+  padding: 0;
 }
